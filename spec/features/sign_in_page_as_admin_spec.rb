@@ -22,13 +22,6 @@ feature 'Sign in as admin' do
     
     expect(home_page).to be_displayed
     expect(home_page.header.text).to eq "Home: #{admin.user[:username]}"
-    expect(home_page).to have_content admin.user[:firstname]
-    expect(home_page).to have_acct_btn
-    expect(home_page).to have_timer_btn
-    expect(home_page).to have_manage_users_btn
-    expect(home_page).to have_manage_clients_btn
-    expect(home_page).to have_manage_tasks_btn
-    expect(home_page).to have_log_out_btn
   end
 
   scenario 'Sign in as admin user with invalid credentials' do
