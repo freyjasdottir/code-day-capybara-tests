@@ -4,18 +4,18 @@ require_relative 'site_prism/landing_page'
 
 feature 'Navigate to landing page and click log in' do
 
-  let(:page) { LandingPage.new }
+  let(:sign_in_page) { LandingPage.new }
 
-  before do
-    page.load
+  background do
+    sign_in_page.load
   end
 
-  scenario 'Go to login page' do
-    expect(page.login_link.text).to eq 'Log In'
+  scenario 'Go to Sign in page' do
+    expect(sign_in_page.login_link.text).to eq 'Log In'
 
-    page.login_link.click
+    sign_in_page.login_link.click
     
-    expect(current_path).to eq '/users/sign_in'
+    expect(sign_in_page).to be_displayed
   end
 
 end

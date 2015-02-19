@@ -1,5 +1,6 @@
 class SignInPage < SitePrism::Page
-  set_url Capybara.app_host + '/users/sign_in'
+  set_url '/users/sign_in'
+  set_url_matcher /localhost:3000\/?/
   
   element :header, '#pageHeader'
   element :username_field, 'input#user_email'

@@ -18,6 +18,10 @@ Capybara.javascript_driver = :selenium
 Capybara.run_server = false
 Capybara.app_host = 'http://localhost:3000'
 
+SitePrism.configure do |config|
+  config.use_implicit_waits = true
+end
+
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
