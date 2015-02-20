@@ -9,4 +9,5 @@ class HomePage < SitePrism::Page
   element :manage_tasks_btn, 'a[href="/admin/tasks"]'
   element :manage_projects_btn, 'a[href="/admin/projects"]'
   element :log_out_btn, '.btn.btn-danger'
+  element :header_log_out_btn, 'nav a.btn.pull-right'
 end

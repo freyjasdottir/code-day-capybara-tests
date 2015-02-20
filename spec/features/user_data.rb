@@ -1,11 +1,23 @@
-class AdminUser
+class User
   attr_reader :user
   def initialize()
     @user = {
               username: 'tester@covermymeds.com',
               password: 'testtest',
-              firstname: 'Test_firstname',
-              lastname: 'Test_lastname'
+              firstname: 'tester',
+              lastname: 'user'
+            }
+  end    
+end
+
+class AdminUser
+  attr_reader :user
+  def initialize()
+    @user = {
+              username: 'admin@admin.com',
+              password: '00000000',
+              firstname: 'admin',
+              lastname: 'admin'
             }
   end    
 end

@@ -27,4 +27,9 @@ feature 'Admin home page links' do
     expect(home_page).to have_manage_projects_btn
     expect(home_page).to have_log_out_btn
   end
+
+  scenario 'Log out from home page' do
+    home_page.header_log_out_btn.click
+    expect(sign_in_page).to be_displayed
+  end
 end
