@@ -19,7 +19,6 @@ feature 'Users page links' do
   end
 
   scenario 'Crud links exist on page' do
-    binding.pry
     expect(users_page.show_btns.first).to be_visible
   end
 end
