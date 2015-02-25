@@ -16,6 +16,7 @@ Capybara.default_driver = :selenium_chrome
 # Capybara.default_driver = :selenium unless ENV['BROWSER'].nil?
 Capybara.javascript_driver = :selenium
 Capybara.run_server = false
+Capybara.default_wait_time = 5
 Capybara.app_host = 'http://localhost:3000'
 
 SitePrism.configure do |config|
