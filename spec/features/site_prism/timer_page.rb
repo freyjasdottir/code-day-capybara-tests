@@ -18,6 +18,7 @@ class TimerPage < SitePrism::Page
   element :stop_btn, '.te_stop_btn'
   elements :start_btns, '.te_start_btn'
   elements :edit_btns, '.te_edit_btn'
+  elements :time_values, '.time-value'
 
   section :modal, ModalSection, '.modal'
 end
