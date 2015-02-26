@@ -20,25 +20,24 @@ feature 'Sign in as admin' do
     
     sign_in_page.sign_in(admin.user[:username], admin.user[:password])
     
-    expect(home_page).to be_displayed
     expect(home_page.header.text).to eq "Home: #{admin.user[:username]}"
   end
 
   scenario 'Sign in as admin user with invalid credentials' do
     sign_in_page.sign_in(invalid_admin.user[:username], invalid_admin.user[:password])
-    expect(sign_in_page).to be_displayed
+
     expect(sign_in_page).to have_content 'Invalid email or password'
   end
 
   scenario 'Sign in as admin user with no username' do
     sign_in_page.sign_in('', admin.user[:password])
-    expect(sign_in_page).to be_displayed
+
     expect(sign_in_page).to have_content 'Invalid email or password'
   end
 
   scenario 'Sign in as admin user with no password' do
     sign_in_page.sign_in(invalid_admin.user[:username], '')
-    expect(sign_in_page).to be_displayed
+
     expect(sign_in_page).to have_content 'Invalid email or password'
   end
 end

@@ -2,5 +2,7 @@ class LandingPage < SitePrism::Page
   set_url '/'
   set_url_matcher /localhost:3000\/?/
 
-  element :login_link, "a"
+  def login_btn
+    find('a', :text => 'Log In')
+  end
 end
