@@ -2,11 +2,15 @@
 
 Requirements:
 
-Install a ruby version manager, tests run with ruby 2.0.0-p247, but crash with ruby 2.1.3
+Install a Ruby version manager, tests run with Ruby 2.2.0
 
-Install phantomJS, tested with version 2.0.0
+Install phantomJS, use version 1.9.8 and move to ```/usr/local/bin```
 
-Install qt: https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
+Install bundler (if not already installed for your Ruby):
+
+```
+$ gem install bundler
+```
 
 Install gems (from project root):
 

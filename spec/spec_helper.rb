@@ -3,23 +3,22 @@ require 'capybara'
 require 'capybara/rspec'
 require 'site_prism'
 require 'capybara/poltergeist'
-require 'capybara/webkit'
 
 #If you want to use phantomjs
-Capybara.default_driver = :webkit
-Capybara.javascript_driver = :webkit
+# Capybara.default_driver = :poltergeist
+# Capybara.javascript_driver = :poltergeist
 
 # If you want to use chromedriver
-# Capybara.register_driver :selenium_chrome do |app|
-#     Capybara::Selenium::Driver.new(app, :browser => :chrome)
-# end
-# Capybara.default_driver = :selenium_chrome
-# Capybara.javascript_driver = :selenium
+Capybara.register_driver :selenium_chrome do |app|
+    Capybara::Selenium::Driver.new(app, :browser => :chrome)
+end
+Capybara.default_driver = :selenium_chrome
+Capybara.javascript_driver = :selenium
 
 # Capybara.default_driver = :selenium unless ENV['BROWSER'].nil?
 
 Capybara.run_server = false
-Capybara.default_wait_time = 10
+Capybara.default_wait_time = 15
 
 # Capybara.app_host = 'http://localhost:3000'
 Capybara.app_host = 'https://covermycodeday2015.herokuapp.com'
