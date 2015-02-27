@@ -13,12 +13,12 @@ feature 'Admin home page links' do
   let(:admin) { AdminUser.new }
   
   background do
+    page.driver.allow_url("covermycodeday2015.herokuapp.com")
     sign_in_page.load
     sign_in_page.sign_in(admin.user[:username], admin.user[:password])
   end
 
   scenario 'Logged in admin user' do
-    home_page.displayed?
     expect(home_page.header.text).to eq "Home: #{admin.user[:username]}"
     expect(home_page).to have_content admin.user[:firstname]
     expect(home_page).to have_acct_btn

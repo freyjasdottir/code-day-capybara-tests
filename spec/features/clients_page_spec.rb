@@ -13,6 +13,7 @@ feature 'Clients page links' do
   let(:admin) { AdminUser.new }
   
   background do
+    page.driver.allow_url("covermycodeday2015.herokuapp.com")
     sign_in_page.load
     sign_in_page.sign_in(admin.user[:username], admin.user[:password])
     home_page.manage_clients_btn.click

@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'rspec/retry'
+
 require_relative 'user_data'
 
 require_relative 'site_prism/sign_in_page'
@@ -11,6 +13,7 @@ feature 'Timer page functionality' do
   let(:worker) { User.new }
 
   background do
+    page.driver.allow_url("covermycodeday2015.herokuapp.com")
     sign_in_page.load
     sign_in_page.sign_in(worker.user[:username], worker.user[:password])
 
@@ -53,7 +56,7 @@ feature 'Timer page functionality' do
     expect(timer_page).to have_start_btns
   end
 
-  scenario 'Edit a timer entry' do
+  scenario 'Edit a timer entry', :retry => 3 do
     timer_page.new_timer_btn.click
     timer_page.wait_for_modal
 

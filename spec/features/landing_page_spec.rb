@@ -8,6 +8,7 @@ feature 'Navigate to landing page and click log in' do
   let(:sign_in_page) { SignInPage.new }
 
   background do
+    page.driver.allow_url("covermycodeday2015.herokuapp.com")
     landing_page.load
   end
 

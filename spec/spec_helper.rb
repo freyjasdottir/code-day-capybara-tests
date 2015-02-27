@@ -3,18 +3,21 @@ require 'capybara'
 require 'capybara/rspec'
 require 'site_prism'
 require 'capybara/poltergeist'
+require 'capybara/webkit'
 
 #If you want to use phantomjs
-# Capybara.default_driver = :poltergeist
+Capybara.default_driver = :webkit
+Capybara.javascript_driver = :webkit
 
 # If you want to use chromedriver
-Capybara.register_driver :selenium_chrome do |app|
-    Capybara::Selenium::Driver.new(app, :browser => :chrome)
-end
-Capybara.default_driver = :selenium_chrome
+# Capybara.register_driver :selenium_chrome do |app|
+#     Capybara::Selenium::Driver.new(app, :browser => :chrome)
+# end
+# Capybara.default_driver = :selenium_chrome
+# Capybara.javascript_driver = :selenium
 
 # Capybara.default_driver = :selenium unless ENV['BROWSER'].nil?
-Capybara.javascript_driver = :selenium
+
 Capybara.run_server = false
 Capybara.default_wait_time = 5
 
