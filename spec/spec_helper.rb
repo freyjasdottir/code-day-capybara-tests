@@ -5,15 +5,15 @@ require 'site_prism'
 require 'capybara/poltergeist'
 
 #If you want to use phantomjs
-# Capybara.default_driver = :poltergeist
-# Capybara.javascript_driver = :poltergeist
+Capybara.default_driver = :poltergeist
+Capybara.javascript_driver = :poltergeist
 
 # If you want to use chromedriver
-Capybara.register_driver :selenium_chrome do |app|
-    Capybara::Selenium::Driver.new(app, :browser => :chrome)
-end
-Capybara.default_driver = :selenium_chrome
-Capybara.javascript_driver = :selenium
+# Capybara.register_driver :selenium_chrome do |app|
+#     Capybara::Selenium::Driver.new(app, :browser => :chrome)
+# end
+# Capybara.default_driver = :selenium_chrome
+# Capybara.javascript_driver = :selenium
 
 # Capybara.default_driver = :selenium unless ENV['BROWSER'].nil?
 
