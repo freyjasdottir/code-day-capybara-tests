@@ -12,7 +12,6 @@ feature 'Sign in as admin' do
   let(:invalid_admin) { InvalidAdminUser.new }
   
   background do
-    page.driver.allow_url("covermycodeday2015.herokuapp.com")
     sign_in_page.load
   end
 

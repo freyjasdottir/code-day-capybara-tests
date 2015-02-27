@@ -1,6 +1,5 @@
 class UsersPage < SitePrism::Page
   set_url '/admin/users'
-  set_url_matcher %r{/admin/users}
 
   element :users_table, 'table'
   element :header, '#pageHeader'

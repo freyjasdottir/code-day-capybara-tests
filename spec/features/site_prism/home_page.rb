@@ -1,6 +1,6 @@
 class HomePage < SitePrism::Page
   set_url '/home'
-  set_url_matcher %r{/home}
+
   element :header, '#pageHeader'
   element :acct_btn, 'a[href="/users/edit"]'
   element :timer_btn, 'a[href="/timer"]'

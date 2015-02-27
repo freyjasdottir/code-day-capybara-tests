@@ -11,7 +11,6 @@ end
 
 class TimerPage < SitePrism::Page
   set_url '/timer'
-  set_url_matcher %r{/timer}
 
   element :header, '#pageHeader'
   element :new_timer_btn, '#newEntryBtn'

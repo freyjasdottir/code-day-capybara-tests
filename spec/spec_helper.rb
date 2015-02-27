@@ -19,7 +19,7 @@ Capybara.javascript_driver = :webkit
 # Capybara.default_driver = :selenium unless ENV['BROWSER'].nil?
 
 Capybara.run_server = false
-Capybara.default_wait_time = 5
+Capybara.default_wait_time = 10
 
 # Capybara.app_host = 'http://localhost:3000'
 Capybara.app_host = 'https://covermycodeday2015.herokuapp.com'

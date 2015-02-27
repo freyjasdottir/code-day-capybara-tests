@@ -1,6 +1,5 @@
 class ClientsPage < SitePrism::Page
   set_url '/admin/clients'
-  set_url_matcher %r{/admin/clients}
 
   element :client_table, 'table'
   element :header, '#pageHeader'
