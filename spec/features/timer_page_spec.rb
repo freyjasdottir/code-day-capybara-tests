@@ -73,7 +73,8 @@ feature 'Timer page functionality' do
     expect(timer_page.modal).to have_update_btn
     expect(timer_page.modal).to have_delete_btn
 
-    timer_page.modal.duration.set('1.75')
+    timer_page.modal.hours.set('1')
+    timer_page.modal.minutes.set('45')
     timer_page.modal.update_btn.click
     timer_page.wait_until_modal_invisible
 
