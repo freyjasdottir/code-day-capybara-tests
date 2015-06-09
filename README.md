@@ -2,9 +2,17 @@
 
 Requirements:
 
-Install a Ruby version manager, tests run with Ruby 2.2.0
+Install Firefox if you don't already have it.
 
-Install phantomJS, use version 1.9.8 and move to ```/usr/local/bin```
+Install a Ruby version manager (tests run with Ruby 2.2.0). 
+
+Install phantomJS, use version 1.9.8 and move to ```/usr/local/bin```:
+
+http://phantomjs.org/download.html
+
+To download version 1.9.8 for mac OS X: https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-macosx.zip
+
+To download version 1.9.8 for Windows: https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-windows.zip
 
 Install bundler (if not already installed for your Ruby):
 
@@ -18,8 +26,16 @@ Install gems (from project root):
 $ bundle
 ```
 
-Run the tests:
+To run tests in the browser (Firefox):
 
 ```
 $ bundle exec rspec
 ```
+
+To run tests with PhantomJS:
+
+```
+$ HEADLESS=true bundle exec rspec
+```
+
+These are Capybara/rspec tests which use the SitePrism page object gem: [SitePrism docs](http://www.rubydoc.info/gems/site_prism/index), [SitePrism on github](https://github.com/natritmeyer/site_prism)
