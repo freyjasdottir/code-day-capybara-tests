@@ -4,24 +4,20 @@ require 'capybara/rspec'
 require 'site_prism'
 require 'capybara/poltergeist'
 
-#If you want to use phantomjs
-Capybara.default_driver = :poltergeist
-Capybara.javascript_driver = :poltergeist
+Capybara.register_driver :selenium_chrome do |app|
+    Capybara::Selenium::Driver.new(app, :browser => :chrome)
+end
 
-# If you want to use chromedriver
-# Capybara.register_driver :selenium_chrome do |app|
-#     Capybara::Selenium::Driver.new(app, :browser => :chrome)
-# end
-# Capybara.default_driver = :selenium_chrome
-# Capybara.javascript_driver = :selenium
-
-# Capybara.default_driver = :selenium unless ENV['BROWSER'].nil?
-
-Capybara.run_server = false
-Capybara.default_wait_time = 15
-
-# Capybara.app_host = 'http://localhost:3000'
-Capybara.app_host = 'https://covermycodeday2015.herokuapp.com'
+Capybara.configure do |c|
+  c.app_host = 'https://covermycodeday2015.herokuapp.com'
+  c.javascript_driver =  :selenium
+  c.default_driver = :poltergeist
+  c.current_driver = :poltergeist
+  c.default_driver = :selenium_chrome if ENV['HEADLESS'].nil?
+  c.current_driver = :selenium_chrome if ENV['HEADLESS'].nil?
+  c.run_server = false
+  c.default_wait_time = 15
+end
 
 SitePrism.configure do |config|
   config.use_implicit_waits = true

@@ -2,7 +2,7 @@
 
 Requirements:
 
-Install Firefox if you don't already have it.
+Install Chrome if you don't already have it.
 
 Install a Ruby version manager (tests run with Ruby 2.2.0). 
 
@@ -26,7 +26,7 @@ Install gems (from project root):
 $ bundle
 ```
 
-To run tests in the browser (Firefox):
+To run tests in the browser (Chrome):
 
 ```
 $ bundle exec rspec
