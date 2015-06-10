@@ -26,7 +26,7 @@ Install gems (from project root):
 $ bundle
 ```
 
-To run tests in the browser (Firefox):
+To run tests in the browser (Chrome):
 
 ```
 $ bundle exec rspec
