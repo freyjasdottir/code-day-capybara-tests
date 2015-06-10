@@ -2,7 +2,7 @@
 
 Requirements:
 
-Install Firefox if you don't already have it.
+Install Chrome if you don't already have it.
 
 Install a Ruby version manager (tests run with Ruby 2.2.0). 
 
