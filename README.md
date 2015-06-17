@@ -38,4 +38,6 @@ To run tests with PhantomJS:
 $ HEADLESS=true bundle exec rspec
 ```
 
+Test site url: https://covermycodeday2015.herokuapp.com
+
 These are Capybara/rspec tests which use the SitePrism page object gem: [SitePrism docs](http://www.rubydoc.info/gems/site_prism/index), [SitePrism on github](https://github.com/natritmeyer/site_prism)
