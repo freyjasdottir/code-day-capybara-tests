@@ -1,6 +1,7 @@
 class ModalSection < SitePrism::Section
   element :title, '.modal-title'
-  element :duration, '#timeEntryDuration'
+  element :minutes, '#timeEntryMinutes'
+  element :hours, '#timeEntryHours'
   element :select_project, '#timeEntryProject'
   element :select_task, '#timeEntryTask'
   element :description, '#timeEntryName'
