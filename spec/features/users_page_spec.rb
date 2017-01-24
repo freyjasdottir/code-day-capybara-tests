@@ -21,4 +21,17 @@ feature 'Users page links' do
   scenario 'Crud links exist on page' do
     expect(users_page.show_btns.first).to be_visible
   end
+
+  scenario 'Admins can create new users' do
+    users_page.new_users_btn.click
+    fill_in 'First name', with: 'Judy'
+    fill_in 'Last name', with: 'Jetson'
+    fill_in 'Email', with: 'judy@ssprockets.org'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
+    click_on("Create User")
+    expect(page).to have_content('Jetson', :visible => true)
+  end
+
+
 end
